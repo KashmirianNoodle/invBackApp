@@ -13,7 +13,7 @@ const swaggerDef = {
   },
   servers: [
     {
-      url: `https://floating-forest-60538.herokuapp.com/v1/docs/#/`,
+      url: `https://floating-forest-60538.herokuapp.com/v1/`,
     },
   ],
 };
