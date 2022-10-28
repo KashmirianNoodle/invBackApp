@@ -1,6 +1,13 @@
+const collaborator = ['getUsers', 'getPlans', 'getInvestments', 'getTransactions']
+const moderator = [...collaborator, 'managePlans']
+const admin = [...collaborator, ...moderator, 'manageUsers', 'manageInvestments']
+
+
 const allRoles = {
   user: [],
-  admin: ['getUsers', 'manageUsers'],
+  collaborator: collaborator,
+  moderator: moderator,
+  admin: admin
 };
 
 const roles = Object.keys(allRoles);

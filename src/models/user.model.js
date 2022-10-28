@@ -44,6 +44,35 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    balance: {
+      type: Number,
+      min: 0,
+      default: 0
+    },
+    bankAccountNo: {
+      type: Number,
+    },
+    bankIFSC: {
+      type: String
+    },
+    aadhaarNo: {
+      type: Number,
+      minlength: 12,
+      maxlength: 12
+      // we need a validate function here to throw a new error.
+    },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
+    isBankAccountVerified: {
+      type: Boolean,
+      default: false,
+    },
+    isAadhaarVerified: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
