@@ -73,6 +73,9 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    phoneNo: {
+      type: Number,
+    }
   },
   {
     timestamps: true,

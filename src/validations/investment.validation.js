@@ -13,6 +13,7 @@ const getInvestments = {
     query: Joi.object().keys({
         planType: Joi.string(),
         sortBy: Joi.string(),
+        principle: Joi.string(),
         limit: Joi.number().integer(),
         page: Joi.number().integer(),
     }),
