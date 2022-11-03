@@ -11,7 +11,7 @@ const createInvestment = {
 
 const getInvestments = {
     query: Joi.object().keys({
-        planName: Joi.string(),
+        planType: Joi.string(),
         sortBy: Joi.string(),
         principle: Joi.string(),
         limit: Joi.number().integer(),
