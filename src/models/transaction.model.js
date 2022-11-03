@@ -45,14 +45,14 @@ transactionSchema.pre('save', async function save(next) {
 transactionSchema.post('save', async function save(doc, next) {
     try {
         if (this.wasNew && (this.operation === 'deposit' || this.operation === 'investmentwithdrawal')) {
-            const currentUser = await User.findOne({ 'accountNumber': this.accountNumber });
+            const currentUser = await User.findOne({ 'bankAccountNo': this.accountNumber });
             currentUser.balance += this.amount;
             currentUser.balance = currentUser.balance.toFixed(2);
             const savedUser = await currentUser.save();
         }
 
         if (this.wasNew && (this.operation === 'withdrawal' || this.operation === 'investment')) {
-            const currentUser = await User.findOne({ 'accountNumber': this.accountNumber });
+            const currentUser = await User.findOne({ 'bankAccountNo': this.accountNumber });
             currentUser.balance -= this.amount;
             currentUser.balance = currentUser.balance.toFixed(2);
             const savedUser = await currentUser.save();

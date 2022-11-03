@@ -39,6 +39,9 @@ describe('Auth routes', () => {
         email: newUser.email,
         role: 'user',
         isEmailVerified: false,
+        balance: 0,
+        isAadhaarVerified: false,
+        isBankAccountVerified: false
       });
 
       const dbUser = await User.findById(res.body.user.id);
@@ -98,6 +101,9 @@ describe('Auth routes', () => {
         email: userOne.email,
         role: userOne.role,
         isEmailVerified: userOne.isEmailVerified,
+        balance: 0,
+        isAadhaarVerified: false,
+        isBankAccountVerified: false
       });
 
       expect(res.body.tokens).toEqual({

@@ -5,6 +5,11 @@ const catchAsync = require('../utils/catchAsync');
 const { transactionService } = require('../services');
 
 
+const createTransaction = catchAsync(async (req, res) => {
+    const transaction = await transactionService.createTransaction(req.body)
+    res.status(httpStatus.CREATED).send(transaction)
+});
+
 const getTransactions = catchAsync(async (req, res) => {
     const filter = pick(req.query, ['accountNumber']);
     const options = pick(req.query, ['sortBy', 'limit', 'page']);
@@ -22,6 +27,7 @@ const getTransaction = catchAsync(async (req, res) => {
 
 
 module.exports = {
+    createTransaction,
     getTransactions,
     getTransaction
 }

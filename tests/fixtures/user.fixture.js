@@ -14,6 +14,9 @@ const userOne = {
   password,
   role: 'user',
   isEmailVerified: false,
+  balance: 0,
+  isAadharVerified: false,
+  isBankAccountVerified: false
 };
 
 const userTwo = {
@@ -23,6 +26,7 @@ const userTwo = {
   password,
   role: 'user',
   isEmailVerified: false,
+
 };
 
 const admin = {
