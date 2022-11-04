@@ -7,7 +7,6 @@ const { createPlan,
     deletePlanById } = require('../../../src/services/plan.service')
 
 const { planOne, planTwo, planThree, insertPlans } = require('../../fixtures/plan.fixture');
-const { getPlan } = require('../../../src/validations/plan.validation');
 setupTestDB();
 
 describe("plan Services", () => {
